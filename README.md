@@ -8,4 +8,4 @@ Este repositorio contiene el diseño y la implementación de un gripper robótic
 - Tres dedos con movimiento independiente.
 - Alta precisión para manipulación de objetos delicados.
 
-![Gripper de 3 Dedos](gripper.png)
+![Gripper de 3 Dedos](images/gripper.png)
