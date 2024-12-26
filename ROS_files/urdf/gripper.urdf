@@ -1,0 +1,566 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<robot name="Gripper">
+  <link
+    name="gripper_base_link">
+    <inertial>
+      <origin
+        xyz="0.014654 -0.0002474 0.10055"
+        rpy="0 0 0" />
+      <mass
+        value="0.43522" />
+      <inertia
+        ixx="0.00088724"
+        ixy="-2.1093E-06"
+        ixz="-3.2339E-05"
+        iyy="0.00089951"
+        iyz="3.5555E-08"
+        izz="0.0012921" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://irb2600_description/meshes/gripper/gripper_base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.91765 0.91765 0.91765 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://irb2600_description/meshes/gripper/gripper_base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="irb2600_gripper_base_joint" type="fixed">
+    <parent link="tool0"/>
+    <child link="gripper_base_link"/>
+    <origin rpy="0 0 3.14" xyz="0 0 0"/>
+  </joint>
+  <link
+    name="fixed_finger_link_1">
+    <inertial>
+      <origin
+        xyz="-1.011E-06 0.0074701 2.4155E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.0097697" />
+      <inertia
+        ixx="1.1051E-06"
+        ixy="9.7946E-11"
+        ixz="-1.279E-11"
+        iyy="7.86E-07"
+        iyz="1.0704E-07"
+        izz="1.204E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://irb2600_description/meshes/gripper/fixed_finger_link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.91765 0.91765 0.91765 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://irb2600_description/meshes/gripper/fixed_finger_link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fixed_finger_joint_1"
+    type="fixed">
+    <origin
+      xyz="-0.047143 -0.00027734 0.136"
+      rpy="1.5708 0 -3.1416" />
+    <parent
+      link="gripper_base_link" />
+    <child
+      link="fixed_finger_link_1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="fixed_finger_link_2">
+    <inertial>
+      <origin
+        xyz="0.00048199 0.051832 0.00015762"
+        rpy="0 0 0" />
+      <mass
+        value="0.041371" />
+      <inertia
+        ixx="1.0538E-05"
+        ixy="-8.0913E-09"
+        ixz="3.7341E-07"
+        iyy="4.4299E-06"
+        iyz="-6.4762E-14"
+        izz="1.1297E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://irb2600_description/meshes/gripper/fixed_finger_link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.91765 0.91765 0.91765 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://irb2600_description/meshes/gripper/fixed_finger_link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fixed_finger_joint_2"
+    type="revolute">
+    <origin
+      xyz="0 0.0175 0"
+      rpy="-3.1416 0 3.1416" />
+    <parent
+      link="fixed_finger_link_1" />
+    <child
+      link="fixed_finger_link_2" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="3" />
+  </joint>
+  <link
+    name="fixed_finger_link_3">
+    <inertial>
+      <origin
+        xyz="-1.0689E-05 -0.00066858 -0.032339"
+        rpy="0 0 0" />
+      <mass
+        value="0.024308" />
+      <inertia
+        ixx="7.3061E-06"
+        ixy="6.956E-09"
+        ixz="1.1206E-07"
+        iyy="7.4457E-06"
+        iyz="-2.001E-07"
+        izz="1.5221E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://irb2600_description/meshes/gripper/fixed_finger_link_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.91765 0.91765 0.91765 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://irb2600_description/meshes/gripper/fixed_finger_link_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fixed_finger_joint_3"
+    type="revolute">
+    <origin
+      xyz="0 0.0999 0"
+      rpy="1.5708 1.5708 0" />
+    <parent
+      link="fixed_finger_link_2" />
+    <child
+      link="fixed_finger_link_3" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="50"
+      velocity="3" />
+  </joint>
+  <link
+    name="finger1_link_1">
+    <inertial>
+      <origin
+        xyz="-1.0079E-06 0.0074909 1.7442E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0098004" />
+      <inertia
+        ixx="1.1033E-06"
+        ixy="9.7733E-11"
+        ixz="-1.2945E-11"
+        iyy="7.8849E-07"
+        iyz="1.0613E-07"
+        izz="1.2007E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://irb2600_description/meshes/gripper/finger1_link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.91765 0.91765 0.91765 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://irb2600_description/meshes/gripper/finger1_link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="finger1_joint_1"
+    type="revolute">
+    <origin
+      xyz="0.047288 -0.055412 0.136"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="gripper_base_link" />
+    <child
+      link="finger1_link_1" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="0"
+      upper="1.57"
+      effort="100"
+      velocity="3" />
+  </joint>
+  <link
+    name="finger1_link_2">
+    <inertial>
+      <origin
+        xyz="-0.00048199 -0.051832 0.00015762"
+        rpy="0 0 0" />
+      <mass
+        value="0.041371" />
+      <inertia
+        ixx="1.0538E-05"
+        ixy="-8.0913E-09"
+        ixz="-3.7341E-07"
+        iyy="4.4299E-06"
+        iyz="6.5074E-14"
+        izz="1.1297E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://irb2600_description/meshes/gripper/finger1_link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.91765 0.91765 0.91765 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://irb2600_description/meshes/gripper/finger1_link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="finger1_joint_2"
+    type="revolute">
+    <origin
+      xyz="0 0.0175 0"
+      rpy="0 0 3.1416" />
+    <parent
+      link="finger1_link_1" />
+    <child
+      link="finger1_link_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="3" />
+  </joint>
+  <link
+    name="finger1_link_3">
+    <inertial>
+      <origin
+        xyz="-1.0689E-05 -0.00066858 -0.032339"
+        rpy="0 0 0" />
+      <mass
+        value="0.024308" />
+      <inertia
+        ixx="7.3061E-06"
+        ixy="6.956E-09"
+        ixz="1.1206E-07"
+        iyy="7.4457E-06"
+        iyz="-2.001E-07"
+        izz="1.5221E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://irb2600_description/meshes/gripper/finger1_link_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.91765 0.91765 0.91765 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://irb2600_description/meshes/gripper/finger1_link_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="finger1_joint_3"
+    type="revolute">
+    <origin
+      xyz="0 -0.0999 0"
+      rpy="-1.5708 1.5708 0" />
+    <parent
+      link="finger1_link_2" />
+    <child
+      link="finger1_link_3" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="50"
+      velocity="3" />
+  </joint>
+  <link
+    name="finger2_link_1">
+    <inertial>
+      <origin
+        xyz="-1.0079E-06 0.0074909 1.7442E-05"
+        rpy="0 0 0" />
+      <mass
+        value="0.0098004" />
+      <inertia
+        ixx="1.1033E-06"
+        ixy="9.7733E-11"
+        ixz="-1.2945E-11"
+        iyy="7.8849E-07"
+        iyz="1.0613E-07"
+        izz="1.2007E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://irb2600_description/meshes/gripper/finger2_link_1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.91765 0.91765 0.91765 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://irb2600_description/meshes/gripper/finger2_link_1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="finger2_joint_1"
+    type="revolute">
+    <origin
+      xyz="0.047288 0.055412 0.136"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="gripper_base_link" />
+    <child
+      link="finger2_link_1" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      lower="0"
+      upper="1.57"
+      effort="100"
+      velocity="1.57" />
+  </joint>
+  <link
+    name="finger2_link_2">
+    <inertial>
+      <origin
+        xyz="0.00048199 -0.051832 -0.00015762"
+        rpy="0 0 0" />
+      <mass
+        value="0.041371" />
+      <inertia
+        ixx="1.0538E-05"
+        ixy="8.0913E-09"
+        ixz="-3.7341E-07"
+        iyy="4.4299E-06"
+        iyz="-6.4622E-14"
+        izz="1.1297E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://irb2600_description/meshes/gripper/finger2_link_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.91765 0.91765 0.91765 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://irb2600_description/meshes/gripper/finger2_link_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="finger2_joint_2"
+    type="revolute">
+    <origin
+      xyz="0 0.0175 0"
+      rpy="0 0 3.1416" />
+    <parent
+      link="finger2_link_1" />
+    <child
+      link="finger2_link_2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="100"
+      velocity="3" />
+  </joint>
+  <link
+    name="finger2_link_3">
+    <inertial>
+      <origin
+        xyz="-1.0689E-05 -0.00066858 -0.032339"
+        rpy="0 0 0" />
+      <mass
+        value="0.024308" />
+      <inertia
+        ixx="7.3061E-06"
+        ixy="6.956E-09"
+        ixz="1.1206E-07"
+        iyy="7.4457E-06"
+        iyz="-2.001E-07"
+        izz="1.5221E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://irb2600_description/meshes/gripper/finger2_link_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.91765 0.91765 0.91765 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://irb2600_description/meshes/gripper/finger2_link_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="finger2_joint_3"
+    type="revolute">
+    <origin
+      xyz="0 -0.0999 0"
+      rpy="-1.5708 -1.5708 0" />
+    <parent
+      link="finger2_link_2" />
+    <child
+      link="finger2_link_3" />
+    <axis
+      xyz="-1 0 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="50"
+      velocity="3" />
+  </joint>
+</robot>
